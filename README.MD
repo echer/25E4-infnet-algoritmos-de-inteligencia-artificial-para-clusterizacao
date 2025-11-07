@@ -20,7 +20,24 @@ Para as questões a seguir, usaremos uma base de dados e faremos a análise expl
 2. Quantos países existem no dataset?
 ![167 países](./assets/country-count.png)
 3. Mostre através de gráficos a faixa dinâmica das variáveis que serão usadas nas tarefas de clusterização. Analise os resultados mostrados. O que deve ser feito com os dados antes da etapa de clusterização?
+   1. Não há valores nulos no conjunto de dados
+   2. Tem 167 países no total
+   3. Todas as variáveis são numéricas, exceto a coluna 'country'. 
+   4. Foi observado grandes diferenças nas escalas, os dados possuem variação alta, presença de outliers e diferença de escala entre variáveis.
+![Data analysis](./assets/data-analysis.png)
+![Distribuição e faixa dinamica de variáveis](./assets/data-distribution.png)
+![Distribuição das variáveis](./assets/data-feature-distribution.png)
 4. Realize o pré-processamento adequado dos dados.
+    1. Remocao das colunas nao númericas.
+![Remocao coluna nao numericas do dataset](./assets/remocao-coluna-nao-numerica.png)
+    2. Tratamento de outliers aplicando logaritmos com tratamento para valores negativos.
+![Aplicação de logaritmos nos outliers tratando quando sao negativos](./assets/tratamento-outliers.png)
+    3. Redução da escala de valores para melhorar o resultado na aplicação dos modelos de clusterização.
+![Redução da escala numérica dos dados](./assets/data-scale-reduction.png) 
+    4. Resultados obtidos em comparação com os valores iniciais com a redução da escala.
+   ![Resultados obtidos](./assets/resultados-variaveis.png)
+   ![Resultados obtidos](./assets/resultados-distribuicao.png)
+   
 
 ## Parte 3 - Clusterização
 
@@ -35,15 +52,15 @@ Para os dados pré-processados da etapa anterior você irá:
     1. Interprete cada um dos clusters obtidos citando:
         1. Qual a distribuição das dimensões em cada grupo
    ![Distribuição por Cluster](./assets/distribuicao-por-cluster.png)
-   **O algoritmo K-Means conseguiu separar os países em três níveis de desenvolvimento socioeconômico:
+   O algoritmo K-Means conseguiu separar os países em três níveis de desenvolvimento socioeconômico:
     Cluster 0: países emergentes, com indicadores intermediários.
     Cluster 1: países desenvolvidos, com alta renda, PIB e expectativa de vida.
-    Cluster 2: países subdesenvolvidos, com baixa renda e alta mortalidade.**
+    Cluster 2: países subdesenvolvidos, com baixa renda e alta mortalidade.
         2. O país, de acordo com o algoritmo, melhor representa o seu agrupamento. Justifique
    ![Pais mais representativo](./assets/country-most-representative.png)
-   **Cluster 0: O Paraguay foi considerado pelo algoritmo por possuir valores medianos de PIB, mortalidade e expectativa de vida de acordo com seu centróide.**
-   **Cluster 1: A Croácia foi considerado pelo algoritmo por possuir indicadores socioeconômicos muito próximos do centróide de países desenvolvidos.**
-   **Cluster 2: A Tanzânia foi considerado pelo algoritmo por representar a média de países com desafios sociais e econômicos de acordo com seu centróide.**
+   Cluster 0: O Paraguay foi considerado pelo algoritmo por possuir valores medianos de PIB, mortalidade e expectativa de vida de acordo com seu centróide.
+   Cluster 1: A Croácia foi considerado pelo algoritmo por possuir indicadores socioeconômicos muito próximos do centróide de países desenvolvidos.
+   Cluster 2: A Tanzânia foi considerado pelo algoritmo por representar a média de países com desafios sociais e econômicos de acordo com seu centróide.
 3. Para os resultados da Clusterização Hierárquica, apresente o dendograma e interprete os resultados
 4. Compare os dois resultados, aponte as semelhanças e diferenças e interprete.
 
